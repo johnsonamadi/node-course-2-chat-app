@@ -1,0 +1,15 @@
+const expect = require('expect');
+
+const {isRealString} = require('./validation');
+
+describe('isRealString', () => {
+    it('should reject non-string values', () => {
+        var res = isRealString(987);
+        expect(res).toBe(false);
+    });
+
+    it('should allow string with non-space characters', () => {
+        var res = isRealString('  johnson  ');
+        expect(res).toBe(true);
+    });
+});
